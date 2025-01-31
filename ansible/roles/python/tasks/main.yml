@@ -38,16 +38,13 @@
 
 - name: Install/Upgrade pip
   ansible.builtin.command: /opt/python3/bin/pip3.9 install --upgrade pip
-  # Если нужно скрыть «неприятные» предупреждения, можно использовать ignore_errors
-  # или tuned changed_when/failed_when:
-  # ignore_errors: yes
-  # changed_when: false
+
 
 - name: Install dev packages for mysqlclient
   apt:
     name:
       - pkg-config
-      - libmariadb-dev  # Либо libmariadb-dev, если вы фактически используете MariaDB
+      - libmariadb-dev  
     state: present
     update_cache: yes
   
