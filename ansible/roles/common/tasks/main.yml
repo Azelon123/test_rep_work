@@ -77,7 +77,7 @@
     group: root
     mode: '0644'
 
-- name: Create deploy user (if not exists)
+- name: Create deploy user
   ansible.builtin.user:
     name: "{{ deploy_user }}"
     shell: /bin/bash
